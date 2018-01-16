@@ -6,20 +6,20 @@
 
 const Config			= require('package.json');
 
-const Gulp				= require('gulp');
-const Less				= require('gulp-less');
+const Gulp  			= require('gulp');
+const Less  			= require('gulp-less');
 const PixRem			= require('gulp-pixrem');
-const CombineMq			= require('gulp-combine-mq');
-const Cache				= require('gulp-cached');
+const CombineMq 		= require('gulp-combine-mq');
+const Cache 			= require('gulp-cached');
 const Filter			= require('gulp-filter');
 const Notify			= require('gulp-notify');
-const Progeny			= require('gulp-progeny');
-const AutoPrefixer		= require('gulp-autoprefixer');
-const CleanCss			= require('gulp-clean-css');
+const Progeny   		= require('gulp-progeny');
+const AutoPrefixer  	= require('gulp-autoprefixer');
+const CleanCss  		= require('gulp-clean-css');
 const Rename			= require('gulp-rename');
-const GulpConnect		= require('gulp-connect');
+const GulpConnect   	= require('gulp-connect');
 const GulpConnectSsi	= require('gulp-connect-ssi');
-const Mjml				= require('gulp-mjml');
+const Mjml  			= require('gulp-mjml');
 
 // ------------------------------------------------------------------------------
 // PATHS
