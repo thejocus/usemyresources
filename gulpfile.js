@@ -4,38 +4,38 @@
 // IMPORTS
 // ------------------------------------------------------------------------------
 
-const Config            = require('package.json');
+const Config			= require('package.json');
 
-const Gulp 				= require('gulp');
-const Less 				= require('gulp-less');
-const PixRem    		= require('gulp-pixrem');
-const CombineMq     	= require('gulp-combine-mq');
-const Cache      		= require('gulp-cached');
-const Filter     		= require('gulp-filter');
-const Notify     		= require('gulp-notify');
-const Progeny    		= require('gulp-progeny');
-const AutoPrefixer   	= require('gulp-autoprefixer');
-const CleanCss   		= require('gulp-clean-css');
-const Rename    		= require('gulp-rename');
-const GulpConnect    	= require('gulp-connect');
-const GulpConnectSsi    = require('gulp-connect-ssi');
-const Mjml 				= require('gulp-mjml');
+const Gulp				= require('gulp');
+const Less				= require('gulp-less');
+const PixRem			= require('gulp-pixrem');
+const CombineMq			= require('gulp-combine-mq');
+const Cache				= require('gulp-cached');
+const Filter			= require('gulp-filter');
+const Notify			= require('gulp-notify');
+const Progeny			= require('gulp-progeny');
+const AutoPrefixer		= require('gulp-autoprefixer');
+const CleanCss			= require('gulp-clean-css');
+const Rename			= require('gulp-rename');
+const GulpConnect		= require('gulp-connect');
+const GulpConnectSsi	= require('gulp-connect-ssi');
+const Mjml				= require('gulp-mjml');
 
 // ------------------------------------------------------------------------------
 // PATHS
 // ------------------------------------------------------------------------------
 
-const FLATBUILD_PATH = `${__dirname}${Config.paths.flatbuildPath}`;
+const FLATBUILD_PATH	= `${__dirname}${Config.paths.flatbuildPath}`;
 
-const PROJECT_PATH = `${__dirname}${Config.paths.projectPath}`;
-const RESOURCES_PATH = `${__dirname}${Config.paths.resourcesPath}`;
+const PROJECT_PATH		= `${__dirname}${Config.paths.projectPath}`;
+const RESOURCES_PATH	= `${__dirname}${Config.paths.resourcesPath}`;
 
 // ------------------------------------------------------------------------------
 // LESS WATCH AND COMPILATION
 // ------------------------------------------------------------------------------
 
-const LESS_PATH = `${__dirname}${Config.paths.lessPath}`;
-const CSS_PATH = `${__dirname}${Config.paths.cssPath}`;
+const LESS_PATH			= `${__dirname}${Config.paths.lessPath}`;
+const CSS_PATH			= `${__dirname}${Config.paths.cssPath}`;
 
 Gulp.task('less', function() {
 	return Gulp.src(LESS_PATH + '/**/*.less')
@@ -74,8 +74,8 @@ Gulp.task('watch:less', ['less'], function() {
 // MJML COMPILATION
 // ------------------------------------------------------------------------------
 
-const MJML_PATH = `${__dirname}${Config.paths.mjmlPath}`;
-const MJML_COMPILED_PATH = `${__dirname}${Config.paths.mjmlCompiledPath}`;
+const MJML_PATH				= `${__dirname}${Config.paths.mjmlPath}`;
+const MJML_COMPILED_PATH	= `${__dirname}${Config.paths.mjmlCompiledPath}`;
 
 Gulp.task('mjml', function() {
 	return Gulp.src(MJML_PATH + '/**/*.mjml')

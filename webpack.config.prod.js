@@ -5,13 +5,13 @@ const Config = require(`${__dirname}/package.json`);
 
 module.exports = {
 	entry: {
-        'app' : `${__dirname}${Config.paths.tsPath}/app.ts`
-    },
+		'app' : `${__dirname}${Config.paths.tsPath}/app.ts`
+	},
 
-    output: {
-        path: `${__dirname}${Config.paths.jsPath}`,
-        filename: '[name].bundle.js'
-    },
+	output: {
+		path: `${__dirname}${Config.paths.jsPath}`,
+		filename: '[name].bundle.js'
+	},
 
 	module: {
 		rules: [
