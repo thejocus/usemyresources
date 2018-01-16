@@ -17,18 +17,12 @@ const Progeny           = require('gulp-progeny');
 const AutoPrefixer      = require('gulp-autoprefixer');
 const CleanCss          = require('gulp-clean-css');
 const Rename            = require('gulp-rename');
-const GulpConnect       = require('gulp-connect');
-const GulpConnectSsi    = require('gulp-connect-ssi');
-const Mjml              = require('gulp-mjml');
 
 // ------------------------------------------------------------------------------
 // PATHS
 // ------------------------------------------------------------------------------
 
-const FLATBUILD_PATH    = `${__dirname}${Config.paths.flatbuildPath}`;
-
 const PROJECT_PATH      = `${__dirname}${Config.paths.projectPath}`;
-const RESOURCES_PATH    = `${__dirname}${Config.paths.resourcesPath}`;
 
 // ------------------------------------------------------------------------------
 // LESS WATCH AND COMPILATION
@@ -62,57 +56,12 @@ Gulp.task('less', function() {
         .pipe(CleanCss({
             keepSpecialComments: '0'
         }))
-        .pipe(Gulp.dest(CSS_PATH))
-        .pipe(GulpConnect.reload());
+        .pipe(Gulp.dest(CSS_PATH));
 });
 
 Gulp.task('watch:less', ['less'], function() {
     Gulp.watch(LESS_PATH + '/**/*.less', ['less']);
 });
-
-// ------------------------------------------------------------------------------
-// MJML COMPILATION
-// ------------------------------------------------------------------------------
-
-const MJML_PATH             = `${__dirname}${Config.paths.mjmlPath}`;
-const MJML_COMPILED_PATH    = `${__dirname}${Config.paths.mjmlCompiledPath}`;
-
-Gulp.task('mjml', function() {
-    return Gulp.src(MJML_PATH + '/**/*.mjml')
-        .pipe(Mjml())
-        .pipe(Gulp.dest(MJML_COMPILED_PATH));
-});
-
-Gulp.task('watch:mjml', ['mjml'], function() {
-    return Gulp.watch([MJML_PATH + '/**/*.mjml'], ['mjml']);
-});
-
-// ------------------------------------------------------------------------------
-// FLATBULD SERVER AND HTML WATCH
-// ------------------------------------------------------------------------------
-
-Gulp.task('html', function () {
-    Gulp.src(FLATBUILD_PATH + '**/*.html')
-        .pipe(GulpConnect.reload());
-});
-
-Gulp.task('serve:flat', ['less'], function() {
-    GulpConnect.server({
-        root: FLATBUILD_PATH,
-        port: 2500,
-        livereload: true,
-        middleware: function(){
-            return [GulpConnectSsi({
-                baseDir: FLATBUILD_PATH,
-                ext: '.html',
-                method: 'readLocal'
-            })];
-        }
-    });
-    Gulp.watch(LESS_PATH + '/**/*.less', ['less']);
-    Gulp.watch(FLATBUILD_PATH + '/**/*.html', ['html']);
-});
-
 // ------------------------------------------------------------------------------
 // DEFAULT TASK
 // ------------------------------------------------------------------------------
