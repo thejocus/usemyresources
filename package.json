@@ -11,10 +11,8 @@
     "license": "ISC",
     "paths": {
         "projectPath": "/",
-        
         "lessPath": "/src/less",
         "cssPath": "/dist/css",
-
         "tsPath": "/src/ts",
         "jsPath": "/dist/js"
     },
@@ -38,5 +36,8 @@
         "http-server": "^0.10.0",
         "typescript": "^2.6.2",
         "webpack": "^3.10.0"
+    },
+    "dependencies": {
+        "@types/chrome": "0.0.58"
     }
 }

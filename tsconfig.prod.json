@@ -9,7 +9,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "types": []
+        "typeRoots": ["./node_modules/@types"]
     },
     "files": [],
     "exclude": [
